@@ -79,7 +79,7 @@ export default function MarketMap({
                     <div className="yah-info">
                       <span className="yah-name">
                         <User size={12} style={{ display: 'inline', marginRight: 4 }} />
-                        Aap yahaan hain
+                        You are here
                       </span>
                       <span className="yah-desc">
                         {userLocation.lat.toFixed(3)}, {userLocation.lng.toFixed(3)}
@@ -172,7 +172,7 @@ export default function MarketMap({
               <div className="user-pin-pulse" />
               <div className="user-pin-dot" />
               <span className="user-pin-label">
-                <User size={10} /> Aap yahaan hain
+                <User size={10} /> You are here
               </span>
             </div>
           )}
