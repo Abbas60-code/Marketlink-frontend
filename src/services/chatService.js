@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:9000/api/chat';
+const API_URL = `${import.meta.env.VITE_API_URL || ''}/api/chat`;
 
 // Helper to configure authorization header
 const getAuthHeaders = () => {
