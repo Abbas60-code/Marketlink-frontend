@@ -24,19 +24,18 @@ export default function LocationPermissionModal() {
 
   useEffect(() => {
     let mounted = true;
+    // 800ms delay — page load hone do pehle, phir modal dikhao
     const timer = setTimeout(() => {
       if (!mounted) return;
       if (userLocation || permissionStatus === 'granted' || permissionStatus === 'denied') return;
-      if (shouldPrompt()) {
-        setStage('prompt');
-        setVisible(true);
-      }
-    }, 250);
+      setStage('prompt');
+      setVisible(true);
+    }, 800);
     return () => {
       mounted = false;
       clearTimeout(timer);
     };
-  }, [permissionStatus, shouldPrompt, userLocation]);
+  }, [permissionStatus, userLocation]);
 
   useEffect(() => {
     if (userLocation || permissionStatus === 'granted' || permissionStatus === 'denied') return;

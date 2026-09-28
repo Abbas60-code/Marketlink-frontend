@@ -147,16 +147,7 @@ export const LocationProvider = ({ children }) => {
   const shouldPrompt = useCallback(({ force = false } = {}) => {
     if (userLocation) return false;
     if (permissionStatus === 'granted') return false;
-    if (force) return true;
-    if (permissionStatus === 'denied') return false;
-
-    // Keep the prompt visible on first load and after a reload when the user has not
-    // explicitly granted access yet. The 24h dismiss flag should not permanently hide
-    // the request when the user is simply opening the site again without a saved location.
-    const lastDismissed = Number(localStorage.getItem(DISMISS_KEY) || 0);
-    if (lastDismissed && Date.now() - lastDismissed < DISMISS_WINDOW_MS && permissionStatus !== 'prompt') {
-      return false;
-    }
+    if (permissionStatus === 'denied' && !force) return false;
     return true;
   }, [permissionStatus, userLocation]);
 
