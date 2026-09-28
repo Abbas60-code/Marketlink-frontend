@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create central Axios instance
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: `${import.meta.env.VITE_API_URL || ''}/api`,
   timeout: 30000,
 });
 
