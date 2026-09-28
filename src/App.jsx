@@ -25,7 +25,7 @@ import ChatLauncher from './components/chat/ChatLauncher.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { CartProvider } from './context/CartContext.jsx';
 import { LocationProvider } from './context/LocationContext.jsx';
-import { ToastProvider, LocationPermissionModal } from './components/shared/index.jsx';
+import { ToastProvider, LocationPermissionModal, ScrollToTop } from './components/shared/index.jsx';
 
 // Storefront layout wrapper with Navbar and Footer
 function StoreLayout({ children }) {
@@ -149,6 +149,7 @@ export default function App() {
                 {/* Global Chat Launcher -- placed outside particular layouts so position: fixed works across all pages without containing block issues */}
                 <ChatLauncher />
                 <LocationPermissionModal />
+                <ScrollToTop />
                 <Routes>
                   {/* Public Storefront Routes */}
                   <Route path="/" element={<StoreLayout><Home /></StoreLayout>} />

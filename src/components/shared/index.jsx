@@ -150,3 +150,4 @@ export function formatDate(date) {
 export { default as MarketMap } from './MarketMap.jsx';
 export { default as CartDrawer } from './CartDrawer.jsx';
 export { default as LocationPermissionModal } from './LocationPermissionModal.jsx';
+export { default as ScrollToTop } from './ScrollToTop.jsx';
