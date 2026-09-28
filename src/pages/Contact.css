@@ -1,0 +1,270 @@
+/* =========================================================
+   CONTACT PAGE STYLES - SPACIOUS & PREMIUM
+   ========================================================= */
+
+.contact-page {
+  padding-bottom: 90px;
+  background-color: var(--color-bg, #fcfdfc);
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%);
+  color: #ffffff;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+
+.contact-hero__content {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.contact-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contact-hero__title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.contact-hero__subtitle {
+  font-size: 1.08rem;
+  color: #d1fae5;
+  line-height: 1.65;
+}
+
+.contact-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.contact-section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.contact-section-lead {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.contact-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+.info-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-icon-circle.green {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.info-icon-circle.blue {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.info-icon-circle.peach {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.contact-info-card strong {
+  display: block;
+  font-size: 15px;
+  color: #0f172a;
+  margin-bottom: 3px;
+}
+
+.contact-info-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.contact-info-card small {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.farmer-onboarding-callout {
+  margin-top: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #f0fdf4;
+  border: 1.5px dashed #86efac;
+  border-radius: 16px;
+  padding: 22px 24px;
+  color: #065f46;
+}
+
+.farmer-onboarding-callout strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.farmer-onboarding-callout p {
+  margin: 0;
+  font-size: 13.5px;
+  color: #047857;
+  line-height: 1.5;
+}
+
+.contact-form-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.form-card-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.message-sent-banner {
+  text-align: center;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.message-sent-banner h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.message-sent-banner p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+
+.contact-map-section {
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 992px) {
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES FOR CONTACT PAGE
+   ========================================================= */
+[data-theme='dark'] .contact-page {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme='dark'] .contact-section-title,
+[data-theme='dark'] .form-card-title,
+[data-theme='dark'] .message-sent-banner h4,
+[data-theme='dark'] .contact-info-card strong {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .contact-section-lead,
+[data-theme='dark'] .contact-info-card p,
+[data-theme='dark'] .contact-info-card small,
+[data-theme='dark'] .message-sent-banner p {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .contact-info-card,
+[data-theme='dark'] .contact-form-card {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme='dark'] .form-card-title,
+[data-theme='dark'] .contact-map-section {
+  border-bottom-color: #334155 !important;
+  border-top-color: #334155 !important;
+}
+
+[data-theme='dark'] .info-icon-circle.green {
+  background: #0d2b1f !important;
+  color: #34d399 !important;
+}
+
+[data-theme='dark'] .info-icon-circle.blue {
+  background: #0c2a4a !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme='dark'] .info-icon-circle.peach {
+  background: #3b1700 !important;
+  color: #fb923c !important;
+}
+
+[data-theme='dark'] .farmer-onboarding-callout {
+  background: #0d2b1f !important;
+  border-color: #059669 !important;
+  color: #34d399 !important;
+}
+
+[data-theme='dark'] .farmer-onboarding-callout p {
+  color: #a7f3d0 !important;
+}
+
+

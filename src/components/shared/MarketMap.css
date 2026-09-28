@@ -1,0 +1,406 @@
+.market-map-widget {
+  display: flex;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--card-bg, #ffffff);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.market-map-sidebar {
+  width: 320px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--card-bg, #ffffff);
+  border-right: 1px solid var(--border-color, #e2e8f0);
+}
+
+.market-map-header {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  background: #f8fafc;
+}
+
+.market-map-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.market-map-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.market-map-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+}
+
+.market-map-item:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.market-map-item.active {
+  background: #ecfdf5;
+  border-color: #10b981;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+}
+
+.market-map-item-pin {
+  color: #10b981;
+  margin-top: 2px;
+}
+
+.market-map-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.market-map-item-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.market-map-item-address {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.market-map-item-days {
+  font-size: 11px;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.market-map-frame-wrap {
+  flex: 1;
+  position: relative;
+  background: #e2e8f0;
+}
+
+.market-map-provider-bar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.map-provider-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  background: transparent;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+
+.map-provider-btn:hover {
+  color: #0f172a;
+  background: #f1f5f9;
+}
+
+.map-provider-btn.active {
+  background: #10b981;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);
+}
+
+.market-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.market-map-overlay-card {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 10;
+}
+
+.market-map-overlay-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.market-badge-pulse {
+  font-size: 11px;
+  font-weight: 700;
+  color: #059669;
+  background: #d1fae5;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.market-directions-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0284c7;
+  text-decoration: none;
+  background: #e0f2fe;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.market-directions-link:hover {
+  background: #bae6fd;
+  color: #0369a1;
+}
+
+.market-overlay-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.market-overlay-address {
+  font-size: 13px;
+  color: #475569;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.market-overlay-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.market-overlay-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@media (max-width: 768px) {
+  .market-map-widget {
+    flex-direction: column;
+    height: 520px !important;
+  }
+  .market-map-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-height: 180px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
+  }
+  .market-map-list {
+    padding: 8px;
+    gap: 6px;
+  }
+  .market-map-item {
+    padding: 8px 10px;
+  }
+  .market-map-frame-wrap {
+    flex: 1;
+    min-height: 280px;
+  }
+  .market-map-overlay-card {
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    padding: 10px 12px;
+    gap: 4px;
+    border-radius: 12px;
+  }
+  .market-overlay-name {
+    font-size: 14px;
+  }
+  .market-overlay-address {
+    font-size: 11px;
+  }
+  .market-overlay-meta {
+    gap: 8px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .market-map-widget {
+    height: 480px !important;
+  }
+  .market-map-sidebar {
+    max-height: 150px;
+  }
+}
+
+/* =========================================================
+   DARK MODE OVERRIDES FOR MARKET MAP WIDGET
+   ========================================================= */
+[data-theme='dark'] .market-map-widget {
+  background: #1e293b !important;
+  border-color: #334155 !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme='dark'] .market-map-sidebar {
+  background: #1e293b !important;
+  border-right-color: #334155 !important;
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme='dark'] .market-map-header {
+  background: #0f172a !important;
+  border-bottom-color: #334155 !important;
+}
+
+[data-theme='dark'] .market-map-title {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .market-map-item {
+  background: #0f172a !important;
+  border-color: #334155 !important;
+}
+
+[data-theme='dark'] .market-map-item:hover {
+  background: #263347 !important;
+  border-color: #475569 !important;
+}
+
+[data-theme='dark'] .market-map-item.active {
+  background: #0d2b1f !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3) !important;
+}
+
+[data-theme='dark'] .market-map-item-name {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .market-map-item-address {
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .market-map-provider-bar {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: #334155 !important;
+}
+
+[data-theme='dark'] .map-provider-btn {
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .map-provider-btn:hover {
+  color: #f8fafc !important;
+  background: #263347 !important;
+}
+
+[data-theme='dark'] .map-provider-btn.active {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+
+[data-theme='dark'] .market-map-overlay-card {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: #334155 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme='dark'] .market-overlay-name {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .market-overlay-address {
+  color: #cbd5e1 !important;
+}
+
+[data-theme='dark'] .market-overlay-meta {
+  border-top-color: #334155 !important;
+  color: #94a3b8 !important;
+}
+
+[data-theme='dark'] .market-directions-link {
+  background: #0c2a4a !important;
+  color: #38bdf8 !important;
+}
+
+[data-theme='dark'] .market-directions-link:hover {
+  background: #075985 !important;
+  color: #ffffff !important;
+}
+
+/* === Recenter / My Location button (inside provider bar) === */
+.recenter-btn {
+  background: rgba(37, 99, 235, 0.08) !important;
+  color: #1d4ed8 !important;
+  font-weight: 700 !important;
+}
+.recenter-btn:hover { background: rgba(37, 99, 235, 0.18) !important; }
+[data-theme='dark'] .recenter-btn {
+  background: rgba(59, 130, 246, 0.14) !important;
+  color: #93c5fd !important;
+}
+
+/* === Sidebar list distance badge right-align === */
+.market-map-item .item-distance {
+  margin-left: auto;
+  align-self: center;
+  flex-shrink: 0;
+}
+.market-map-item { align-items: center; }
+.market-map-item-info { flex: 1; min-width: 0; }
+
+

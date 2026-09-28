@@ -1,0 +1,421 @@
+/* Edit Admin Profile Modal Styling */
+
+.admin-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999999;
+  padding: 16px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.admin-modal-card {
+  background: #ffffff;
+  width: 560px;
+  max-width: 100%;
+  max-height: 92vh;
+  border-radius: 20px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28), 0 4px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalPopIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Header */
+.admin-modal-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.admin-modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-title-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-modal-title-group h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.admin-modal-title-group p {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 2px 0 0 0;
+}
+
+.modal-close-icon-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close-icon-btn:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Form Body */
+.admin-modal-form {
+  padding: 20px 22px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Avatar Section */
+.modal-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+}
+
+.avatar-preview-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+
+.avatar-large-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #10b981;
+}
+
+.avatar-camera-overlay {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.avatar-picker-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.picker-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.preset-avatars-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preset-thumb-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.preset-thumb-btn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.preset-thumb-btn:hover {
+  transform: scale(1.1);
+}
+
+.preset-thumb-btn.selected {
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+}
+
+.preset-check-icon {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: #10b981;
+  color: #ffffff;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Fields Grid */
+.modal-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.modal-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.modal-form-group label svg {
+  color: #10b981;
+}
+
+.modal-form-group input,
+.modal-form-group select,
+.modal-form-group textarea {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.modal-form-group input:focus,
+.modal-form-group select:focus,
+.modal-form-group textarea:focus {
+  background: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+/* Footer Actions */
+.admin-modal-footer {
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.modal-btn-cancel {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-btn-cancel:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.modal-btn-save {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: all 0.2s;
+}
+
+.modal-btn-save:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.modal-btn-save.success {
+  background: #059669;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .admin-modal-card,
+.dark-theme .admin-modal-card {
+  background: #111726;
+  border-color: #1e293b;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .admin-modal-header,
+.dark-theme .admin-modal-header {
+  background: #111726;
+  border-color: #1e293b;
+}
+
+[data-theme="dark"] .admin-modal-title-group h3,
+.dark-theme .admin-modal-title-group h3 {
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .admin-modal-title-group p,
+.dark-theme .admin-modal-title-group p {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .modal-avatar-section,
+.dark-theme .modal-avatar-section {
+  background: #161f30;
+  border-color: #243048;
+}
+
+[data-theme="dark"] .picker-label,
+.dark-theme .picker-label {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .modal-form-group label,
+.dark-theme .modal-form-group label {
+  color: #cbd5e1;
+}
+
+[data-theme="dark"] .modal-form-group input,
+.dark-theme .modal-form-group input,
+[data-theme="dark"] .modal-form-group select,
+.dark-theme .modal-form-group select,
+[data-theme="dark"] .modal-form-group textarea,
+.dark-theme .modal-form-group textarea {
+  background: #1a2236;
+  border-color: #243048;
+  color: #f8fafc;
+}
+
+[data-theme="dark"] .modal-form-group input:focus,
+.dark-theme .modal-form-group input:focus,
+[data-theme="dark"] .modal-form-group select:focus,
+.dark-theme .modal-form-group select:focus,
+[data-theme="dark"] .modal-form-group textarea:focus,
+.dark-theme .modal-form-group textarea:focus {
+  background: #161f33;
+  border-color: #10b981;
+}
+
+[data-theme="dark"] .admin-modal-footer,
+.dark-theme .admin-modal-footer {
+  border-color: #1e293b;
+}
+
+[data-theme="dark"] .modal-btn-cancel,
+.dark-theme .modal-btn-cancel {
+  border-color: #2a3852;
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .modal-btn-cancel:hover,
+.dark-theme .modal-btn-cancel:hover {
+  background: #1a2236;
+  color: #f8fafc;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 580px) {
+  .modal-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-modal-card {
+    border-radius: 16px;
+  }
+
+  .modal-avatar-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
