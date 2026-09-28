@@ -24,7 +24,7 @@ export default function LocationPermissionModal() {
 
   useEffect(() => {
     let mounted = true;
-    // 800ms delay — page load hone do pehle, phir modal dikhao
+    // 800ms delay — let the page load first, then show the modal
     const timer = setTimeout(() => {
       if (!mounted) return;
       if (userLocation || permissionStatus === 'granted' || permissionStatus === 'denied') return;

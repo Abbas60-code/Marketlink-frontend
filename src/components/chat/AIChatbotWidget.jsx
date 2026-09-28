@@ -228,9 +228,9 @@ export default function AIChatbotWidget() {
         errMsg.toLowerCase().includes('high demand') ||
         errMsg.toLowerCase().includes('unavailable')
       ) {
-        errorText = '⏳ AI abhi busy hai — high demand ki wajah se. Thodi der baad dobara try karein!';
+        errorText = '⏳ AI is currently busy due to high demand. Please try again in a moment!';
       } else if (err?.response?.status === 401 || errMsg.toLowerCase().includes('unauthorized') || errMsg.toLowerCase().includes('token')) {
-        errorText = '🔒 AI use karne ke liye pehle login karein.';
+        errorText = '🔒 Please log in to use the AI assistant.';
       } else if (errMsg) {
         errorText = `⚠️ ${errMsg}`;
       }
